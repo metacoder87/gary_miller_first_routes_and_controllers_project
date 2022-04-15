@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+    protect_from_forgery
+    
     def index
         render plain: "I'm in the index action!"
     end
