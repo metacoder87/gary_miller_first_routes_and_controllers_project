@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    # added to get around a "Missing Authentication Token" error
     protect_from_forgery
 
     def index
