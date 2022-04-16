@@ -2,7 +2,8 @@ class UsersController < ApplicationController
     protect_from_forgery
 
     def index
-        render plain: "I'm in the index action!"
+        # displays all users data
+        render json: User.all
     end
 
     def create
