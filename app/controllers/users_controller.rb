@@ -21,6 +21,17 @@ class UsersController < ApplicationController
         # displays a specific user
         render json: User.find(params[:id])
     end
+
+    def update
+        # allows for updates to the attributes of a user
+        user = User.find(params[:id])
+        if user.update_attributes(user_params)
+            render json: user
+        else
+            render user.errors.full_messages, status: :unprocessable_entity
+        end
+    end
+
 private
 
     def user_params
