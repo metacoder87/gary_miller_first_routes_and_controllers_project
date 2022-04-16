@@ -18,7 +18,11 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: params
+private
+
+    def user_params
+        #holds the rules for params given to user
+        params.require(:user).permit(:name, :email)
     end
 
 end
