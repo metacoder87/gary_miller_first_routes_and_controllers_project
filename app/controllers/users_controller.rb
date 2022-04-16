@@ -18,6 +18,9 @@ class UsersController < ApplicationController
     end
 
     def show
+        # displays a specific user
+        render json: User.find(params[:id])
+    end
 private
 
     def user_params
